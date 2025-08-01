@@ -1,4 +1,4 @@
-# ProjectNest - Student Project Selling Platform
+# ZipMyProject - Student Project Selling Platform
 
 A modern, full-stack web application for selling student projects with secure payments and admin management.
 
@@ -31,7 +31,7 @@ A modern, full-stack web application for selling student projects with secure pa
 ## 📦 Project Structure
 
 ```
-projectnest/
+ZipMyProject/
 ├── src/                    # Frontend React application
 │   ├── components/         # Reusable UI components
 │   ├── contexts/          # React context providers
@@ -56,7 +56,7 @@ projectnest/
 ### 1. Clone Repository
 ```bash
 git clone <your-repo-url>
-cd projectnest
+cd ZipMyProject
 ```
 
 ### 2. Setup Frontend
@@ -90,9 +90,9 @@ nano .env
 ```bash
 # Create PostgreSQL database
 sudo -u postgres psql
-CREATE DATABASE projectnest;
-CREATE USER projectnest_user WITH PASSWORD 'your_password';
-GRANT ALL PRIVILEGES ON DATABASE projectnest TO projectnest_user;
+CREATE DATABASE ZipMyProject;
+CREATE USER ZipMyProject_user WITH PASSWORD 'your_password';
+GRANT ALL PRIVILEGES ON DATABASE ZipMyProject TO ZipMyProject_user;
 \q
 
 # Run database migration
@@ -120,7 +120,7 @@ VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 
 ### Backend (backend/.env)
 ```env
-DATABASE_URL=postgresql://username:password@localhost:5432/projectnest
+DATABASE_URL=postgresql://username:password@localhost:5432/ZipMyProject
 JWT_SECRET=your_super_secret_jwt_key
 RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_secret
@@ -239,4 +239,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-**ProjectNest** - Empowering students with quality projects for academic success.
+**ZipMyProject** - Empowering students with quality projects for academic success.

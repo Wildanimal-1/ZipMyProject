@@ -1,4 +1,4 @@
-# ProjectNest API Endpoints Documentation
+# ZipMyProject API Endpoints Documentation
 
 ## Base URL
 - **Development**: `http://localhost:5000/api`
@@ -345,7 +345,7 @@ Check API server status.
 ```json
 {
   "status": "OK",
-  "message": "ProjectNest API is running",
+  "message": "ZipMyProject API is running",
   "timestamp": "2024-01-15T10:00:00Z"
 }
 ```

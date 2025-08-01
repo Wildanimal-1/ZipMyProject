@@ -21,7 +21,7 @@ const Login: React.FC = () => {
       let success = false;
       
       // Try admin login first
-      if (email === 'admin@projectnest.in') {
+      if (email === 'admin@ZipMyProject.in') {
         success = await adminLogin(email, password);
       } else {
         success = await login(email, password);
@@ -134,7 +134,7 @@ const Login: React.FC = () => {
             <div className="bg-blue-50 p-4 rounded-lg">
               <p className="text-sm text-blue-700 font-medium mb-2">Demo Credentials:</p>
               <p className="text-xs text-blue-600">
-                <strong>Admin:</strong> admin@projectnest.in / admin123
+                <strong>Admin:</strong> admin@ZipMyProject.in / admin123
               </p>
               <p className="text-xs text-blue-600">
                 <strong>User:</strong> Any valid email / Any password

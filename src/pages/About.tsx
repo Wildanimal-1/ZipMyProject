@@ -8,7 +8,7 @@ const About: React.FC = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About ProjectNest
+            About ZipMyProject
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Empowering students with high-quality, ready-to-use projects that bridge the gap 
@@ -21,7 +21,7 @@ const About: React.FC = () => {
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              At ProjectNest, we believe that learning by doing is the most effective way to master 
+              At ZipMyProject, we believe that learning by doing is the most effective way to master 
               new technologies. Our mission is to provide students with access to professionally 
               crafted projects that serve as learning tools and implementation guides.
             </p>
@@ -106,19 +106,19 @@ const About: React.FC = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
           <div className="prose prose-lg max-w-none text-gray-600">
             <p>
-              ProjectNest was born from a simple observation: students often struggle to bridge 
+              ZipMyProject was born from a simple observation: students often struggle to bridge 
               the gap between theoretical knowledge and practical implementation. As a B.Tech 
               student myself, I experienced firsthand the challenges of finding quality reference 
               projects that could serve as learning tools.
             </p>
             <p>
-              The idea for ProjectNest emerged during my final year when I realized that many 
+              The idea for ZipMyProject emerged during my final year when I realized that many 
               of my peers were spending countless hours searching for good project examples, 
               often settling for incomplete or poorly documented solutions. I knew there had 
               to be a better way.
             </p>
             <p>
-              Today, ProjectNest serves hundreds of students across various disciplines, 
+              Today, ZipMyProject serves hundreds of students across various disciplines, 
               providing them with the tools they need to succeed in their academic and 
               professional journeys. Our growing collection of projects covers everything 
               from web development to data science, ensuring that there's something for everyone.

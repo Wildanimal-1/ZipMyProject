@@ -29,7 +29,7 @@ const ProjectDetail: React.FC = () => {
     setIsLoading(true);
     
     try {
-      const token = localStorage.getItem('projectnest_token');
+      const token = localStorage.getItem('ZipMyProject_token');
       const response = await fetch(`${API_BASE_URL}/orders/create`, {
         method: 'POST',
         headers: {

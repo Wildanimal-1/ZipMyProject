@@ -1,4 +1,4 @@
-# ProjectNest Deployment Guide
+# ZipMyProject Deployment Guide
 
 ## Complete PostgreSQL Backend Setup & Deployment
 
@@ -21,9 +21,9 @@
 2. **Create Database**
    ```bash
    sudo -u postgres psql
-   CREATE DATABASE projectnest;
-   CREATE USER projectnest_user WITH PASSWORD 'your_secure_password';
-   GRANT ALL PRIVILEGES ON DATABASE projectnest TO projectnest_user;
+   CREATE DATABASE ZipMyProject;
+   CREATE USER ZipMyProject_user WITH PASSWORD 'your_secure_password';
+   GRANT ALL PRIVILEGES ON DATABASE ZipMyProject TO ZipMyProject_user;
    \q
    ```
 
@@ -81,9 +81,9 @@ apt install certbot python3-certbot-nginx -y
 sudo -u postgres psql
 
 # Create database and user
-CREATE DATABASE projectnest;
-CREATE USER projectnest_user WITH PASSWORD 'your_very_secure_password_here';
-GRANT ALL PRIVILEGES ON DATABASE projectnest TO projectnest_user;
+CREATE DATABASE ZipMyProject;
+CREATE USER ZipMyProject_user WITH PASSWORD 'your_very_secure_password_here';
+GRANT ALL PRIVILEGES ON DATABASE ZipMyProject TO ZipMyProject_user;
 \q
 
 # Configure PostgreSQL for remote connections (if needed)
@@ -99,8 +99,8 @@ sudo systemctl restart postgresql
 ### Step 4: Deploy Backend
 ```bash
 # Create app directory
-mkdir /var/www/projectnest
-cd /var/www/projectnest
+mkdir /var/www/ZipMyProject
+cd /var/www/ZipMyProject
 
 # Clone your code (or upload via SCP)
 # Upload your backend folder here
@@ -118,7 +118,7 @@ nano .env
 npm run migrate
 
 # Start with PM2
-pm2 start server.js --name "projectnest-api"
+pm2 start server.js --name "ZipMyProject-api"
 pm2 startup
 pm2 save
 ```
@@ -126,7 +126,7 @@ pm2 save
 ### Step 5: Setup Nginx
 ```bash
 # Create Nginx configuration
-sudo nano /etc/nginx/sites-available/projectnest
+sudo nano /etc/nginx/sites-available/ZipMyProject
 
 # Add this configuration:
 ```
@@ -151,7 +151,7 @@ server {
 
     # Frontend (React build)
     location / {
-        root /var/www/projectnest/frontend/dist;
+        root /var/www/ZipMyProject/frontend/dist;
         index index.html;
         try_files $uri $uri/ /index.html;
     }
@@ -160,7 +160,7 @@ server {
 
 ```bash
 # Enable the site
-sudo ln -s /etc/nginx/sites-available/projectnest /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/ZipMyProject /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
 
@@ -174,10 +174,10 @@ sudo certbot --nginx -d your-domain.com -d www.your-domain.com
 npm run build
 
 # Upload dist folder to server
-scp -r dist/ root@your_droplet_ip:/var/www/projectnest/frontend/
+scp -r dist/ root@your_droplet_ip:/var/www/ZipMyProject/frontend/
 
 # Or build on server
-cd /var/www/projectnest/frontend
+cd /var/www/ZipMyProject/frontend
 npm install
 npm run build
 ```
@@ -225,25 +225,25 @@ npm run build
 ```bash
 #!/bin/bash
 # Create backup script
-sudo nano /usr/local/bin/backup-projectnest.sh
+sudo nano /usr/local/bin/backup-ZipMyProject.sh
 
 # Add this content:
 #!/bin/bash
-BACKUP_DIR="/var/backups/projectnest"
+BACKUP_DIR="/var/backups/ZipMyProject"
 DATE=$(date +%Y%m%d_%H%M%S)
 mkdir -p $BACKUP_DIR
 
-pg_dump -U projectnest_user -h localhost projectnest > $BACKUP_DIR/projectnest_$DATE.sql
+pg_dump -U ZipMyProject_user -h localhost ZipMyProject > $BACKUP_DIR/ZipMyProject_$DATE.sql
 
 # Keep only last 7 days of backups
 find $BACKUP_DIR -name "*.sql" -mtime +7 -delete
 
 # Make executable
-sudo chmod +x /usr/local/bin/backup-projectnest.sh
+sudo chmod +x /usr/local/bin/backup-ZipMyProject.sh
 
 # Add to crontab for daily backups
 sudo crontab -e
-# Add: 0 2 * * * /usr/local/bin/backup-projectnest.sh
+# Add: 0 2 * * * /usr/local/bin/backup-ZipMyProject.sh
 ```
 
 ### 🌍 Domain Setup
@@ -304,10 +304,10 @@ df -h
    ```bash
    # Check PM2 status
    pm2 status
-   pm2 logs projectnest-api
+   pm2 logs ZipMyProject-api
    
    # Restart if needed
-   pm2 restart projectnest-api
+   pm2 restart ZipMyProject-api
    ```
 
 3. **Frontend Not Loading**
@@ -327,4 +327,4 @@ If you need help with deployment:
 3. Test database connection
 4. Check firewall settings
 
-This guide provides everything you need to deploy ProjectNest with PostgreSQL successfully!
+This guide provides everything you need to deploy ZipMyProject with PostgreSQL successfully!

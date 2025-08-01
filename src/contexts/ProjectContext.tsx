@@ -46,7 +46,7 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
   };
 
   const getAuthHeaders = () => {
-    const token = localStorage.getItem('projectnest_token');
+    const token = localStorage.getItem('ZipMyProject_token');
     return {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`

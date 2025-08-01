@@ -1,7 +1,7 @@
 {
-  "name": "projectnest-backend",
+  "name": "ZipMyProject-backend",
   "version": "1.0.0",
-  "description": "Backend API for ProjectNest - Student Project Selling Platform",
+  "description": "Backend API for ZipMyProject - Student Project Selling Platform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -26,6 +26,6 @@
     "nodemon": "^3.0.2"
   },
   "keywords": ["nodejs", "express", "postgresql", "api", "backend"],
-  "author": "ProjectNest",
+  "author": "ZipMyProject",
   "license": "MIT"
 }

@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">P</span>
               </div>
-              <span className="text-xl font-bold">ProjectNest</span>
+              <span className="text-xl font-bold">ZipMyProject</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               Empowering students with high-quality, ready-to-use projects. 
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             <div className="flex space-x-4">
               <div className="flex items-center space-x-2 text-gray-400">
                 <Mail size={16} />
-                <span>contact@projectnest.in</span>
+                <span>contact@ZipMyProject.in</span>
               </div>
             </div>
           </div>
@@ -53,10 +53,10 @@ const Footer: React.FC = () => {
           <div className="flex items-center justify-center space-x-1 text-gray-400">
             <span>Made with</span>
             <Heart size={16} className="text-red-500" />
-            <span>by ProjectNest Team</span>
+            <span>by ZipMyProject Team</span>
           </div>
           <p className="text-gray-400 mt-2">
-            © 2024 ProjectNest. All rights reserved.
+            © 2024 ZipMyProject. All rights reserved.
           </p>
         </div>
       </div>

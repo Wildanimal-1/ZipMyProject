@@ -68,7 +68,7 @@ const AdminLogin: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-500 focus:border-red-500"
-                placeholder="admin@projectnest.in"
+                placeholder="admin@ZipMyProject.in"
               />
             </div>
 
@@ -123,7 +123,7 @@ const AdminLogin: React.FC = () => {
             <div className="bg-red-50 p-4 rounded-lg">
               <p className="text-sm text-red-700 font-medium mb-2">Demo Admin Access:</p>
               <p className="text-xs text-red-600">
-                Email: admin@projectnest.in<br />
+                Email: admin@ZipMyProject.in<br />
                 Password: admin123
               </p>
             </div>

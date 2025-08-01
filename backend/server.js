@@ -38,7 +38,7 @@ app.use('/api/contact', require('./routes/contact'));
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 
-    message: 'ProjectNest API is running',
+    message: 'ZipMyProject API is running',
     timestamp: new Date().toISOString()
   });
 });
@@ -56,7 +56,7 @@ app.use('*', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 ProjectNest API server running on port ${PORT}`);
+  console.log(`🚀 ZipMyProject API server running on port ${PORT}`);
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
 });
 

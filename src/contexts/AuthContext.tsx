@@ -29,7 +29,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     // Check for existing session
-    const token = localStorage.getItem('projectnest_token');
+    const token = localStorage.getItem('ZipMyProject_token');
     
     if (token) {
       // Verify token with backend
@@ -47,11 +47,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             isAdmin: data.user.isAdmin,
           });
         } else {
-          localStorage.removeItem('projectnest_token');
+          localStorage.removeItem('ZipMyProject_token');
         }
       })
       .catch(() => {
-        localStorage.removeItem('projectnest_token');
+        localStorage.removeItem('ZipMyProject_token');
       });
     }
   }, []);
@@ -69,7 +69,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const data = await response.json();
 
       if (response.ok && data.token) {
-        localStorage.setItem('projectnest_token', data.token);
+        localStorage.setItem('ZipMyProject_token', data.token);
         setAuthState({
           user: data.user,
           isAuthenticated: true,
@@ -97,7 +97,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const data = await response.json();
 
       if (response.ok && data.token) {
-        localStorage.setItem('projectnest_token', data.token);
+        localStorage.setItem('ZipMyProject_token', data.token);
         setAuthState({
           user: data.user,
           isAuthenticated: true,
@@ -118,7 +118,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const logout = () => {
-    localStorage.removeItem('projectnest_token');
+    localStorage.removeItem('ZipMyProject_token');
     setAuthState({
       user: null,
       isAuthenticated: false,

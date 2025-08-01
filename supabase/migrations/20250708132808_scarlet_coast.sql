@@ -1,8 +1,8 @@
--- ProjectNest Database Schema
+-- ZipMyProject Database Schema
 -- Complete PostgreSQL setup for project selling website
 
 -- Create database (run this first)
--- CREATE DATABASE projectnest;
+-- CREATE DATABASE ZipMyProject;
 
 -- Users table for authentication
 CREATE TABLE users (
@@ -91,7 +91,7 @@ CREATE TRIGGER update_orders_updated_at BEFORE UPDATE ON orders FOR EACH ROW EXE
 -- Insert default admin user (password: admin123)
 -- Note: In production, hash this password properly
 INSERT INTO users (name, email, password_hash, is_admin) VALUES 
-('Admin', 'admin@projectnest.in', '$2b$10$rQZ8kHWKtGkVQGOoVQGOoOQGOoVQGOoVQGOoVQGOoVQGOoVQGOoVQ', TRUE);
+('Admin', 'admin@ZipMyProject.in', '$2b$10$rQZ8kHWKtGkVQGOoVQGOoOQGOoVQGOoVQGOoVQGOoVQGOoVQGOoVQ', TRUE);
 
 -- Insert sample projects
 INSERT INTO projects (title, description, short_description, price, thumbnail_url, screenshots, download_link) VALUES 
