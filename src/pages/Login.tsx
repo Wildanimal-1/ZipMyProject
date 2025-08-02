@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { LogIn, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import logoImage from '../contexts/Assets/ZipMyProject.png';
+import logoImage from '../contexts/Assets/loginlogo1.png';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -47,7 +47,7 @@ const Login: React.FC = () => {
           <div className="flex justify-center">
             <img 
               src={logoImage} 
-              alt="ZipMyProject Logo" 
+              alt="loginlogo" 
               className="w-16 h-16 object-contain"
             />
           </div>

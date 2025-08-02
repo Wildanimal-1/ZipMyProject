@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserPlus, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import logoImage from '../contexts/Assets/loginlogo1.png';
 
 const Signup: React.FC = () => {
   const [name, setName] = useState('');
@@ -51,9 +52,11 @@ const Signup: React.FC = () => {
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="flex justify-center">
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">P</span>
-            </div>
+            <img 
+              src={logoImage} 
+              alt="ZipMyProject Logo" 
+              className="w-16 h-16 object-contain"
+            />
           </div>
           <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
             Create your account
