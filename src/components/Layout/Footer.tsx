@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heart, Mail, Phone, MapPin } from 'lucide-react';
-import Logo from '/home/Wildanimal-1/ZipMyProject/src/contexts/Assets/ZipMyProject.png';
+import Logo from '../../contexts/Assets/ZipMyProject.png';
 
 const Footer: React.FC = () => {
   return (
