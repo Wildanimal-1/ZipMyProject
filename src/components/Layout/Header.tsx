@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User, LogOut, Settings } from 'lucide-react';
+import { Menu, X, User, LogOut, Settings, ShoppingCart } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
+import { useCart } from '../../contexts/CartContext';
 import logoImage from '../../contexts/Assets/ZipMyProject.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { isAuthenticated, isAdmin, user, logout } = useAuth();
+  const { getCartCount } = useCart();
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -61,6 +63,16 @@ const Header: React.FC = () => {
 
           {/* User Actions */}
           <div className="hidden md:flex items-center space-x-4">
+            {/* Cart Icon */}
+            <Link to="/cart" className="relative p-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <ShoppingCart size={20} />
+              {getCartCount() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {getCartCount()}
+                </span>
+              )}
+            </Link>
+
             {isAuthenticated ? (
               <div className="relative">
                 <button
