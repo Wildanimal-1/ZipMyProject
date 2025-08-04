@@ -16,6 +16,13 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AdminLogin from './pages/Admin/AdminLogin';
 import AdminDashboard from './pages/Admin/AdminDashboard';
+import AdminProjects from './pages/Admin/AdminProjects';
+import AdminUsers from './pages/Admin/AdminUsers';
+import AdminOrders from './pages/Admin/AdminOrders';
+import AdminReviews from './pages/Admin/AdminReviews';
+import AdminSupport from './pages/Admin/AdminSupport';
+import AdminSettings from './pages/Admin/AdminSettings';
+import AdminAnalytics from './pages/Admin/AdminAnalytics';
 
 function App() {
   return (
@@ -42,6 +49,62 @@ function App() {
                 element={
                   <ProtectedRoute requireAdmin={true}>
                     <AdminDashboard />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/projects" 
+                element={
+                  <ProtectedRoute requireAdmin={true}>
+                    <AdminProjects />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/users" 
+                element={
+                  <ProtectedRoute requireAdmin={true}>
+                    <AdminUsers />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/orders" 
+                element={
+                  <ProtectedRoute requireAdmin={true}>
+                    <AdminOrders />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/reviews" 
+                element={
+                  <ProtectedRoute requireAdmin={true}>
+                    <AdminReviews />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/support" 
+                element={
+                  <ProtectedRoute requireAdmin={true}>
+                    <AdminSupport />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/analytics" 
+                element={
+                  <ProtectedRoute requireAdmin={true}>
+                    <AdminAnalytics />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/settings" 
+                element={
+                  <ProtectedRoute requireAdmin={true}>
+                    <AdminSettings />
                   </ProtectedRoute>
                 } 
               />
