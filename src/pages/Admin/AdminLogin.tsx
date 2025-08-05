@@ -18,14 +18,25 @@ const AdminLogin: React.FC = () => {
     setError('');
 
     try {
-      const success = await adminLogin(email, password);
+      const success = await login(email, password);
       if (success) {
-        navigate('/admin');
+        // Check if user is admin after login
+        const { data: profile } = await supabase
+          .from('users')
+          .select('is_admin')
+          .eq('email', email)
+          .single();
+        
+        if (profile?.is_admin) {
+          navigate('/admin');
+        } else {
+          setError('Admin access required');
+        }
       } else {
         setError('Invalid admin credentials');
       }
     } catch (error) {
-      setError('An error occurred. Please try again.');
+      setError('Login failed. Please try again.');
     } finally {
       setIsLoading(false);
     }

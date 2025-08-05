@@ -36,12 +36,14 @@ const Signup: React.FC = () => {
     try {
       const success = await signup(name, email, password);
       if (success) {
-        navigate('/');
+        // Show success message and redirect to login
+        alert('Account created successfully! Please check your email to verify your account.');
+        navigate('/login');
       } else {
-        setError('An error occurred during registration');
+        setError('Registration failed. Please try again.');
       }
     } catch (error) {
-      setError('An error occurred. Please try again.');
+      setError('Registration failed. Please try again.');
     } finally {
       setIsLoading(false);
     }

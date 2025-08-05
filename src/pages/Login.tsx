@@ -19,22 +19,20 @@ const Login: React.FC = () => {
     setError('');
 
     try {
-      let success = false;
-      
-      // Try admin login first
-      if (email === 'admin@ZipMyProject.in') {
-        success = await adminLogin(email, password);
-      } else {
-        success = await login(email, password);
-      }
+      const success = await login(email, password);
 
       if (success) {
-        navigate('/');
+        // Check if user is admin and redirect accordingly
+        if (email === 'admin@ZipMyProject.in') {
+          navigate('/admin');
+        } else {
+          navigate('/');
+        }
       } else {
         setError('Invalid email or password');
       }
     } catch (error) {
-      setError('An error occurred. Please try again.');
+      setError('Login failed. Please check your credentials.');
     } finally {
       setIsLoading(false);
     }
