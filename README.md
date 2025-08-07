@@ -67,7 +67,7 @@ npm install
 # Copy environment file
 cp .env.example .env
 
-# Edit .env with your configuration
+# Edit .env with your configuration (including Supabase keys)
 nano .env
 ```
 
@@ -113,6 +113,8 @@ npm run dev
 
 ### Frontend (.env)
 ```env
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 VITE_API_URL=http://localhost:5000/api
 VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
 VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
