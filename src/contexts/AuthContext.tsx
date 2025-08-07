@@ -132,19 +132,26 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
+      // Check if Supabase is properly configured
+      if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
+        console.error('Supabase environment variables are not configured');
+        return false;
+      }
+
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
       if (error) {
-        console.error('Login error:', error.message);
+        console.error('Supabase login error:', error.message);
         return false;
       }
 
       return !!data.user;
     } catch (error) {
-      console.error('Login error:', error);
+      console.error('Login network error:', error);
+      console.error('Please check your Supabase configuration and internet connection');
       return false;
     }
   };

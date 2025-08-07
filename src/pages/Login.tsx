@@ -29,10 +29,11 @@ const Login: React.FC = () => {
           navigate('/');
         }
       } else {
-        setError('Invalid email or password');
+        setError('Login failed. Please check your credentials and internet connection.');
       }
     } catch (error) {
-      setError('Login failed. Please check your credentials.');
+      console.error('Login error:', error);
+      setError('Connection failed. Please check your internet connection and try again.');
     } finally {
       setIsLoading(false);
     }
